@@ -5,9 +5,10 @@ import { StyleSheet, Text, TextInput, TextInputProps, View } from 'react-native'
 interface Props extends TextInputProps {
   label?: string;
   error?: string;
+  paramName?: string;
 }
 
-export function Input({ label, error, ...props }: Props) {
+export function Input({ label, error, paramName, ...props }: Props) {
   return (
     <View style={styles.container}>
       {label && <Text style={styles.label}>{label}</Text>}
@@ -16,12 +17,12 @@ export function Input({ label, error, ...props }: Props) {
         placeholderTextColor="#A0A0A0"
         {...props}
       />
-      {error && (
+      {/* {error && (
         <View style={styles.errorContainer}>
           <Ionicons name="alert-circle" size={16} color="#FF3B30" />
           <Text style={styles.errorText}>{error}</Text>
         </View>
-      )}
+      )} */}
     </View>
   )
 }
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   inputError: {
-    borderColor: '#FF3B30',
+    borderColor: '#d34742',
   },
   errorContainer: {
     flexDirection: 'row',

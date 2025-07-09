@@ -1,0 +1,307 @@
+{
+    "pathRoot": "/environment",
+    "authConfig": {
+      "pathRoot": "",
+      "claimedAt": "2025-02-05T21:50:50.093Z",
+      "reverification": false,
+      "singleSessionMode": true,
+      "preferredChannels": null
+    },
+    "displayConfig": {
+      "pathRoot": "",
+      "afterCreateOrganizationUrl": "https://patient-glider-34.accounts.dev/default-redirect",
+      "afterJoinWaitlistUrl": "https://patient-glider-34.accounts.dev/default-redirect",
+      "afterLeaveOrganizationUrl": "https://patient-glider-34.accounts.dev/default-redirect",
+      "afterSignInUrl": "https://patient-glider-34.accounts.dev/default-redirect",
+      "afterSignOutAllUrl": "https://patient-glider-34.accounts.dev/sign-in",
+      "afterSignOutOneUrl": "https://patient-glider-34.accounts.dev/sign-in/choose",
+      "afterSignOutUrl": "",
+      "afterSignUpUrl": "https://patient-glider-34.accounts.dev/default-redirect",
+      "afterSwitchSessionUrl": "https://patient-glider-34.accounts.dev/default-redirect",
+      "applicationName": "Kozi",
+      "backendHost": "",
+      "branded": true,
+      "captchaHeartbeat": false,
+      "captchaOauthBypass": [],
+      "captchaProvider": "turnstile",
+      "captchaPublicKey": null,
+      "captchaPublicKeyInvisible": null,
+      "captchaWidgetType": null,
+      "createOrganizationUrl": "https://patient-glider-34.accounts.dev/create-organization",
+      "faviconImageUrl": "",
+      "homeUrl": "https://patient-glider-34.accounts.dev/default-redirect",
+      "id": "display_config_2sdO9raVqBZs7JZ2fVXyxgzwGJb",
+      "instanceEnvironmentType": "development",
+      "logoImageUrl": "",
+      "organizationProfileUrl": "https://patient-glider-34.accounts.dev/organization",
+      "preferredSignInStrategy": "password",
+      "privacyPolicyUrl": "",
+      "showDevModeWarning": true,
+      "signInUrl": "https://patient-glider-34.accounts.dev/sign-in",
+      "signUpUrl": "https://patient-glider-34.accounts.dev/sign-up",
+      "supportEmail": "",
+      "termsUrl": "",
+      "theme": {
+        "buttons": {
+          "font_color": "#ffffff",
+          "font_family": "\"Source Sans Pro\", sans-serif",
+          "font_weight": "600"
+        },
+        "general": {
+          "color": "#6c47ff",
+          "padding": "1em",
+          "box_shadow": "0 2px 8px rgba(0, 0, 0, 0.2)",
+          "font_color": "#151515",
+          "font_family": "\"Source Sans Pro\", sans-serif",
+          "border_radius": "0.5em",
+          "background_color": "#ffffff",
+          "label_font_weight": "600"
+        },
+        "accounts": {
+          "background_color": "#ffffff"
+        }
+      },
+      "userProfileUrl": "https://patient-glider-34.accounts.dev/user",
+      "waitlistUrl": "https://patient-glider-34.accounts.dev/waitlist",
+      "clerkJSVersion": "5"
+    },
+    "maintenanceMode": false,
+    "userSettings": {
+      "pathRoot": "",
+      "actions": {
+        "delete_self": true,
+        "create_organization": true,
+        "create_organizations_limit": null
+      },
+      "attributes": {
+        "email_address": {
+          "enabled": true,
+          "required": true,
+          "used_for_first_factor": true,
+          "first_factors": [
+            "email_code"
+          ],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [
+            "email_code"
+          ],
+          "verify_at_sign_up": true,
+          "name": "email_address"
+        },
+        "phone_number": {
+          "enabled": true,
+          "required": false,
+          "used_for_first_factor": true,
+          "first_factors": [
+            "phone_code"
+          ],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [
+            "phone_code"
+          ],
+          "verify_at_sign_up": true,
+          "name": "phone_number"
+        },
+        "username": {
+          "enabled": true,
+          "required": true,
+          "used_for_first_factor": true,
+          "first_factors": [],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [],
+          "verify_at_sign_up": false,
+          "name": "username"
+        },
+        "web3_wallet": {
+          "enabled": false,
+          "required": false,
+          "used_for_first_factor": false,
+          "first_factors": [],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [],
+          "verify_at_sign_up": false,
+          "name": "web3_wallet"
+        },
+        "first_name": {
+          "enabled": true,
+          "required": false,
+          "used_for_first_factor": false,
+          "first_factors": [],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [],
+          "verify_at_sign_up": false,
+          "name": "first_name"
+        },
+        "last_name": {
+          "enabled": true,
+          "required": false,
+          "used_for_first_factor": false,
+          "first_factors": [],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [],
+          "verify_at_sign_up": false,
+          "name": "last_name"
+        },
+        "password": {
+          "enabled": true,
+          "required": true,
+          "used_for_first_factor": false,
+          "first_factors": [],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [],
+          "verify_at_sign_up": false,
+          "name": "password"
+        },
+        "authenticator_app": {
+          "enabled": false,
+          "required": false,
+          "used_for_first_factor": false,
+          "first_factors": [],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [],
+          "verify_at_sign_up": false,
+          "name": "authenticator_app"
+        },
+        "ticket": {
+          "enabled": true,
+          "required": false,
+          "used_for_first_factor": false,
+          "first_factors": [],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [],
+          "verify_at_sign_up": false,
+          "name": "ticket"
+        },
+        "backup_code": {
+          "enabled": false,
+          "required": false,
+          "used_for_first_factor": false,
+          "first_factors": [],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [],
+          "verify_at_sign_up": false,
+          "name": "backup_code"
+        },
+        "passkey": {
+          "enabled": true,
+          "required": false,
+          "used_for_first_factor": true,
+          "first_factors": [
+            "passkey"
+          ],
+          "used_for_second_factor": false,
+          "second_factors": [],
+          "verifications": [
+            "passkey"
+          ],
+          "verify_at_sign_up": false,
+          "name": "passkey"
+        }
+      },
+      "enterpriseSSO": {
+        "enabled": false
+      },
+      "passkeySettings": {
+        "allow_autofill": true,
+        "show_sign_in_button": true
+      },
+      "passwordSettings": {
+        "disable_hibp": false,
+        "min_length": 8,
+        "max_length": 72,
+        "require_special_char": false,
+        "require_numbers": false,
+        "require_uppercase": false,
+        "require_lowercase": false,
+        "show_zxcvbn": false,
+        "min_zxcvbn_strength": 0,
+        "enforce_hibp_on_sign_in": true,
+        "allowed_special_characters": "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~"
+      },
+      "saml": {
+        "enabled": false
+      },
+      "signIn": {
+        "second_factor": {
+          "required": false
+        }
+      },
+      "signUp": {
+        "captcha_enabled": true,
+        "captcha_widget_type": "smart",
+        "custom_action_required": false,
+        "progressive": true,
+        "mode": "public",
+        "legal_consent_enabled": false
+      },
+      "social": {
+        "oauth_apple": {
+          "enabled": true,
+          "required": false,
+          "authenticatable": true,
+          "block_email_subaddresses": false,
+          "strategy": "oauth_apple",
+          "not_selectable": false,
+          "deprecated": false,
+          "name": "Apple",
+          "logo_url": "https://img.clerk.com/static/apple.png"
+        },
+        "oauth_google": {
+          "enabled": true,
+          "required": false,
+          "authenticatable": true,
+          "block_email_subaddresses": true,
+          "strategy": "oauth_google",
+          "not_selectable": false,
+          "deprecated": false,
+          "name": "Google",
+          "logo_url": "https://img.clerk.com/static/google.png"
+        }
+      },
+      "usernameSettings": {
+        "min_length": 4,
+        "max_length": 64,
+        "allow_extended_special_characters": false
+      }
+    },
+    "organizationSettings": {
+      "pathRoot": "",
+      "actions": {
+        "adminDelete": true
+      },
+      "domains": {
+        "enabled": true,
+        "enrollmentModes": [
+          "manual_invitation",
+          "automatic_suggestion",
+          "automatic_invitation"
+        ],
+        "defaultRole": "org:member"
+      },
+      "enabled": true,
+      "maxAllowedMemberships": 5
+    },
+    "commerceSettings": {
+      "pathRoot": "",
+      "billing": {
+        "stripePublishableKey": "",
+        "enabled": false,
+        "hasPaidUserPlans": false,
+        "hasPaidOrgPlans": false
+      }
+    },
+    "apiKeysSettings": {
+      "pathRoot": "",
+      "enabled": false
+    }
+  }

@@ -23,6 +23,7 @@ import { Input } from "./components/Input";
 import { Button } from "./components/Button";
 import OAuthButton from "./components/OAuthButton";
 import ContinueButton from "./components/ContinueButton";
+import ErrorText from "./components/ErrorText";
 
 enum FormState {
   SignIn,
@@ -49,7 +50,11 @@ function InitialSignInForm({
   const { signIn, isLoaded, setActive } = useSignIn();
   const clerk = useClerk()
 
-  const [emailAddress, setEmailAddress] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [erroredParams, setErroredParams] = useState<string[]>([])
+  const [identifier, setIdentifier] = useState("");
+  const [identifierLabel, setIdentifierLabel] = useState("Email address");
+  const [identifierPlaceholder, setIdentifierPlaceholder] = useState("Enter your email");
 
   // @ts-ignore
   const environment = clerk.__unstable__environment as EnvironmentResource
@@ -58,15 +63,35 @@ function InitialSignInForm({
     .filter(([_, provider]: [string, any]) => provider?.enabled)
     .map(([key]: [string, any]) => key);
 
+  useEffect(() => {
+    if (!environment) {
+      return;
+    }
+    const isEmailEnabled = environment?.userSettings?.attributes?.email_address?.enabled && environment?.userSettings?.attributes?.email_address?.used_for_first_factor;
+    const isUsernameEnabled = environment?.userSettings?.attributes?.username?.enabled && environment?.userSettings?.attributes?.username?.used_for_first_factor;
+    
+    if (isEmailEnabled && isUsernameEnabled) {
+      setIdentifierLabel("Email address or username");
+      setIdentifierPlaceholder("Enter your email or username");
+    } else if (isEmailEnabled) {
+      setIdentifierLabel("Email address");
+      setIdentifierPlaceholder("Enter your email");
+    } else if (isUsernameEnabled) {
+      setIdentifierLabel("Username");
+      setIdentifierPlaceholder("Enter your username");
+    }
+
+  }, [environment])
 
   async function onContinuePressed() {
+    setErrorMessage('')
     if (!isLoaded || !signIn) {
       return;
     }
 
     try {
       const signInAttempt = await signIn.create({
-        identifier: emailAddress
+        identifier
       })
       const { supportedFirstFactors } = signInAttempt
       if (!supportedFirstFactors) {
@@ -82,7 +107,10 @@ function InitialSignInForm({
       onSetFirstFactor(firstFactor)
       onSetSupportedFirstFactors(supportedFirstFactors)
     } catch (err: any) {
-      console.error('signInError', JSON.stringify(err, null, 2));
+      console.error('signInError', JSON.stringify(err, null, 2))
+      const { errors } = err
+      setErrorMessage(errors[0].message)
+      setErroredParams(errors.map((e: any) => e?.meta?.paramName))
     }
   }
 
@@ -111,14 +139,18 @@ function InitialSignInForm({
       )}
 
       <Input
-        label="Email address"
+        label={identifierLabel}
         autoCapitalize="none"
-        value={emailAddress}
-        onChangeText={(email) => setEmailAddress(email)}
-        placeholder="Enter your email"
+        value={identifier}
+        onChangeText={(identifier) => setIdentifier(identifier)}
+        placeholder={identifierPlaceholder}
+        paramName="identifier"
+        error={erroredParams.includes("identifier") ? errorMessage : undefined}
       />
+
+      <ErrorText message={errorMessage} />
       
-      <ContinueButton onPress={onContinuePressed} disabled={!emailAddress} />
+      <ContinueButton onPress={onContinuePressed} disabled={!identifier} />
 
       <TouchableOpacity
         onPress={() => router.replace(signUpUrl)}
