@@ -1,0 +1,88 @@
+{
+    "pathRoot": "/client/sign_ups",
+    "status": "missing_requirements",
+    "requiredFields": [
+      "email_address",
+      "password"
+    ],
+    "optionalFields": [
+      "phone_number",
+      "username",
+      "first_name",
+      "last_name",
+      "oauth_google",
+      "oauth_apple"
+    ],
+    "missingFields": [],
+    "unverifiedFields": [
+      "email_address"
+    ],
+    "verifications": {
+      "emailAddress": {
+        "pathRoot": "",
+        "status": null,
+        "strategy": null,
+        "nonce": null,
+        "message": null,
+        "externalVerificationRedirectURL": null,
+        "attempts": null,
+        "expireAt": null,
+        "error": null,
+        "verifiedAtClient": null,
+        "nextAction": "",
+        "supportedStrategies": []
+      },
+      "phoneNumber": {
+        "pathRoot": "",
+        "status": null,
+        "strategy": null,
+        "nonce": null,
+        "message": null,
+        "externalVerificationRedirectURL": null,
+        "attempts": null,
+        "expireAt": null,
+        "error": null,
+        "verifiedAtClient": null,
+        "nextAction": "",
+        "supportedStrategies": []
+      },
+      "web3Wallet": {
+        "pathRoot": "",
+        "status": null,
+        "strategy": null,
+        "nonce": null,
+        "message": null,
+        "externalVerificationRedirectURL": null,
+        "attempts": null,
+        "expireAt": null,
+        "error": null,
+        "verifiedAtClient": null,
+        "nextAction": "",
+        "supportedStrategies": []
+      },
+      "externalAccount": {
+        "pathRoot": "",
+        "status": null,
+        "strategy": null,
+        "nonce": null,
+        "message": null,
+        "externalVerificationRedirectURL": null,
+        "attempts": null,
+        "expireAt": null,
+        "error": null,
+        "verifiedAtClient": null
+      }
+    },
+    "username": null,
+    "firstName": null,
+    "lastName": null,
+    "emailAddress": "brian@morrisonhome.net",
+    "phoneNumber": null,
+    "web3wallet": null,
+    "unsafeMetadata": {},
+    "createdSessionId": null,
+    "createdUserId": null,
+    "abandonAt": 1752168798773,
+    "legalAcceptedAt": null,
+    "id": "sua_2zeCxYDSwya1mQECtXzUCVcBnOh"
+  }

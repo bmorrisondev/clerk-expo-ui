@@ -67,16 +67,62 @@ function SignUpScreen() {
 - **SignIn**: Complete sign-in form with email and OAuth options
 - **SignUp**: Complete sign-up form with email and OAuth options
 - **SignOutButton**: Button for signing out users
-
-### UI Components
-
-- **Button**: A customizable button component with gradient background
-- **Input**: A form input component with error handling
-- **OAuthButton**: OAuth authentication button for various providers
-
+  
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+### Roadmap
+
+#### UI Components
+- [X]  [`<SignIn />`](https://clerk.com/docs/components/authentication/sign-in)
+- [X]  [`<SignUp />`](https://clerk.com/docs/components/authentication/sign-up)
+- [ ]  [`<UserButton />`](https://clerk.com/docs/components/user/user-button)
+- [ ]  [`<UserProfile />`](https://clerk.com/docs/components/user/user-profile)
+- [ ]  [`<CreateOrganization />`](https://clerk.com/docs/components/organization/create-organization)
+- [ ]  [`<OrganizationProfile />`](https://clerk.com/docs/components/organization/organization-profile)
+- [ ]  [`<OrganizationSwitcher />`](https://clerk.com/docs/components/organization/organization-switcher)
+- [ ]  [`<OrganizationList />`](https://clerk.com/docs/components/organization/organization-list)
+
+#### Authentication Methods
+- [X] Email Authentication
+  - [X] Password-based login
+  - [X] Email verification
+    - [X] Verification code
+    - [ ] Magic link
+- [ ] Phone Number Authentication
+  - [ ] SMS verification
+- [ ] Username/Password Authentication
+- [ ] Passkeys Support
+- [X] Single Sign-On (SSO)
+- [ ] Web3 Authentication
+  - [ ] MetaMask
+  - [ ] Coinbase Wallet
+  - [ ] OKX Wallet
+- [ ] Multi-factor Authentication
+  - [ ] SMS codes
+  - [ ] Authenticator apps
+  - [ ] Backup codes
+- [ ] Terms of Service Acceptance
+
+#### Access Control Modes
+- [ ] Restricted access
+- [ ] Waitlist functionality
+- [ ] Allowlist functionality
+- [ ] Blocklist functionality
+
+#### Organization Features
+- [ ] Domain-specific SSO
+- [ ] Organization switcher
+
+#### User Profile Options
+- [ ] Name requirements (first/last)
+- [ ] Phone number requirements
+- [ ] Username requirements
+
+#### Account Management
+- [ ] Account deletion
+- [ ] Password changes
 
 ## License
 

@@ -58,7 +58,7 @@ function ErrorText({ message }: Props) {
   
   return (
     <Animated.View style={[styles.errorContainer, errorAnimatedStyle]}>
-      <Ionicons name="alert-circle" size={16} color="#D32F2F" />
+      <Ionicons name="alert-circle" size={16} color="#D32F2F" style={{ marginTop: 2 }} />
       <Animated.Text style={[styles.errorText]} numberOfLines={3}>
         {message}
       </Animated.Text>
@@ -79,10 +79,9 @@ const styles = StyleSheet.create({
   errorContainer: {
     width: '100%',
     paddingRight: 16,
-    marginVertical: 8,
     overflow: 'hidden',
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: 8,
   },
 })
