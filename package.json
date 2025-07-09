@@ -1,6 +1,6 @@
 {
   "name": "@brianmmdev/clerk-expo-ui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "UI components for Clerk authentication in React Native/Expo applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
