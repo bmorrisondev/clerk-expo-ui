@@ -88,6 +88,7 @@ export function InitialSignInForm({
       if (!supportedFirstFactors) {
         throw new Error("No supported first factors")
       }
+      // @ts-ignore TODO: Fix this type issue
       const firstFactor = determineFirstFactor(supportedFirstFactors)
       if(firstFactor.strategy == "email_code" || firstFactor.strategy == "reset_password_email_code") {
         await signInAttempt.prepareFirstFactor({
@@ -98,6 +99,7 @@ export function InitialSignInForm({
         })
       }
       onSetFirstFactor(firstFactor, identifier)
+      // @ts-ignore TODO: Fix this type issue
       onSetSupportedFirstFactors(supportedFirstFactors)
     } catch (err: any) {
       const { errors } = err
