@@ -165,8 +165,8 @@ function checkPeerDependencies() {
   if (Object.keys(missingDeps).length > 0) {
     console.log('\n⚠️ The following peer dependencies are required but not installed:');
     
-    for (const [dep, version] of Object.entries(missingDeps)) {
-      console.log(`  - ${dep}@${version}`);
+    for (const [dep] of Object.entries(missingDeps)) {
+      console.log(`  - ${dep}`);
     }
     
     // Detect package manager
@@ -180,7 +180,7 @@ function checkPeerDependencies() {
     
     // Build installation command
     const depsString = Object.entries(missingDeps)
-      .map(([dep, version]) => `${dep}@${version}`)
+      .map(([dep]) => `${dep}`)
       .join(' ');
     
     let installCmd = '';
@@ -224,7 +224,7 @@ async function installComponents() {
       // Check for missing peer dependencies
       checkPeerDependencies();
       
-      console.log('\n📚 For more information, visit: https://github.com/your-username/clerk-expo-ui');
+      console.log('\n📚 For more information, visit: https://github.com/brianmmdev/clerk-expo-ui');
     } else {
       console.log('⚠️ No files were copied. The source directory might be empty.');
     }
