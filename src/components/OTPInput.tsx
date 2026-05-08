@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { StyleSheet, View, TextInput, Text } from 'react-native';
+import { useEffect, useRef, useState } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 interface Props {
   length?: number;
@@ -16,7 +16,7 @@ export function OTPInput({
   error,
   label,
 }: Props) {
-  const inputRefs = useRef<Array<TextInput | null>>([]);
+  const inputRefs = useRef<(TextInput | null)[]>([]);
   const [focusedIndex, setFocusedIndex] = useState<number>(0);
 
   // Initialize the refs array based on length
@@ -50,6 +50,25 @@ export function OTPInput({
         // Move focus to previous input if not at the first input
         if (index > 0) {
           inputRefs.current[index - 1]?.focus();
+        }
+      } else if (text.length > 1) {
+        // Paste detected - multiple characters pasted at once
+        const digits = text.replace(/\D/g, ''); // Extract only digits
+        const digitsToFill = digits.slice(0, length - index); // Only fill remaining slots
+
+        // Fill inputs starting from current index
+        for (let i = 0; i < digitsToFill.length; i++) {
+          if (index + i < length) {
+            newValue[index + i] = digitsToFill[i];
+          }
+        }
+
+        onChange(newValue.join(''));
+
+        // Move focus to the next empty input or the last input if all filled
+        const nextEmptyIndex = Math.min(index + digitsToFill.length, length - 1);
+        if (inputRefs.current[nextEmptyIndex]) {
+          inputRefs.current[nextEmptyIndex]?.focus();
         }
       } else {
         // New digit entered
@@ -92,7 +111,7 @@ export function OTPInput({
             onKeyPress={(e) => handleKeyPress(e, index)}
             onFocus={() => setFocusedIndex(index)}
             onBlur={() => setFocusedIndex(-1)}
-            maxLength={1}
+            maxLength={length}
             keyboardType="number-pad"
             selectTextOnFocus
             autoCapitalize="none"
